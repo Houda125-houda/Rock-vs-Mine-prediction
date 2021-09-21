@@ -46,3 +46,25 @@ model.fit(X_train, y_train)
 X_train_prediction = model.predict(X_train)
 training_data_accuracy = accuracy_score(X_train_prediction, y_train)
 print('Accuracy on training data : ', training_data_accuracy)
+
+###############################################
+
+X_test_prediction = model.predict(X_test)
+test_data_accuracy = accuracy_score(X_test_prediction, y_test)
+print('Accuracy on test data : ', test_data_accuracy)
+
+# making a predictive system 
+input_data = ()
+# changing the input data to numpy array 
+input_data_as_numpy_array = np.asarray(input_data)  # we are converting this into a numpy array because is faster and easy 
+# we rechape the np array  as we are predictiong for one instance
+input_data_reshaped = input_data_as_numpy_array.reshape(-1,1)  #  reshape(-1,1) represents there is one instance and we are going to predict the label for this one instance 
+prediction = model.predict(input_data_reshaped)
+print(prediction)
+
+ if(prediction[0] == 'R'):
+    print("The object is a Rock!")
+ else 
+    print(" The object is a mine ")
+
+        
